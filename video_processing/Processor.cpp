@@ -21,22 +21,17 @@ int main(int argc, char *argv[])
 
 		const string videoFileName = argv[1];
 
-		VideoCapture captRefrnc(videoFileName);
-		VideoCapture captUndTst(videoFileName);
+		VideoCapture capture(videoFileName);
 
-		if (!captRefrnc.isOpened())
+		if (!capture.isOpened())
 		{
 				cout << "Could not open movie file" << videoFileName << endl;
 				return -1;
 		}
 
-		Size refS = Size(
-				(int) captRefrnc.get(CAP_PROP_FRAME_WIDTH),
-				(int) captRefrnc.get(CAP_PROP_FRAME_HEIGHT));
-		Size uTSi = Size(
-				(int) captRefrnc.get(CAP_PROP_FRAME_WIDTH),
-				(int) captRefrnc.get(CAP_PROP_FRAME_HEIGHT));
+		Size videoFrame = Size(
+				(int) capture.get(CAP_PROP_FRAME_WIDTH),
+				(int) capture.get(CAP_PROP_FRAME_HEIGHT));
 
-		cout << "refs" << refS << endl;
-		cout << "uTSi" << uTSi << endl;
+		cout << "vidoeFrame" << videoFrame << endl;
 }
