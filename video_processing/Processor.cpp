@@ -29,4 +29,14 @@ int main(int argc, char *argv[])
 				cout << "Could not open movie file" << videoFileName << endl;
 				return -1;
 		}
+
+		Size refS = Size(
+				(int) captRefrnc.get(CAP_PROP_FRAME_WIDTH),
+				(int) captRefrnc.get(CAP_PROP_FRAME_HEIGHT));
+		Size uTSi = Size(
+				(int) captRefrnc.get(CAP_PROP_FRAME_WIDTH),
+				(int) captRefrnc.get(CAP_PROP_FRAME_HEIGHT));
+
+		cout << "refs" << refS << endl;
+		cout << "uTSi" << uTSi << endl;
 }
