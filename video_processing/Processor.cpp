@@ -34,4 +34,9 @@ int main(int argc, char *argv[])
 				(int) capture.get(CAP_PROP_FRAME_HEIGHT));
 
 		cout << "vidoeFrame" << videoFrame << endl;
+
+		const char* VID_WIN = "video_window";
+
+		namedWindow(VID_WIN, WINDOW_AUTOSIZE);
+
 }
